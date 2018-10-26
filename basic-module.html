@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jgene.js"></script>
+		<link rel="stylesheet" type="text/css" href="gene.css">
+		<script type="text/javascript">
+			$(function(){
+				$("#gerar").click(function(){
+					var gene1 = converterGene($("#tipoS1").val().toUpperCase());
+					var gene2 = converterGene($("#tipoS2").val().toUpperCase());
+
+					var possib = unirGene(gene1,gene2);
+					if(possib[0] != 0){
+						$('#ba').html(possib[0] + '%');
+					}else{
+						$('#ba').html('');
+					}
+					if(possib[1] != 0){
+						$('#bb').html(possib[1] + '%');
+					}else{
+						$('#bb').html('');
+					}
+					if(possib[2] != 0){
+						$('#bab').html(possib[2] + '%');
+					}else{
+						$('#bab').html('');
+					}
+					if(possib[3] != 0){
+						$('#bo').html(possib[3] + '%');
+					}else{
+						$('#bo').html('');
+					}
+
+					$('#ba').css('width',possib[0] + '%');
+					$('#bb').css('width',possib[1] + '%');
+					$('#bab').css('width',possib[2] + '%');
+					$('#bo').css('width',possib[3] + '%');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<div>
+				<label>Tipo Sanguíneo do Indivíduo 1:</label>
+				<input type="text" id="tipoS1"maxlength="4">
+			</div>
+			<div>
+				<label>Tipo Sanguíneo do Indivíduo 1:</label>
+				<input type="text" id="tipoS2"maxlength="4">
+			</div>
+			<button id="gerar">Gerar resultados</button>
+		</div>
+		<div class="result-container">
+			<div class="legenda" id="ra">A</div>
+			<div class="barra" id="ba"></div>
+			<div class="legenda" id="rb">B</div>
+			<div class="barra" id="bb"></div>
+			<div class="legenda" id="rab">AB</div>
+			<div class="barra" id="bab"></div>
+			<div class="legenda" id="ro">O</div>
+			<div class="barra" id="bo"></div>
+		</div>
+	</body>
+</html>

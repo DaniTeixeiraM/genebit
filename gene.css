@@ -1,0 +1,29 @@
+*{
+	box-sizing: border-box;
+}
+
+.result-container{
+	width:80%;
+	margin: 10px auto;
+	padding:10px;
+	box-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+	border-radius: 10px;
+	font-family: Verdana
+}
+.legenda{
+	border-top: 1px solid #ababab;
+	color:#666;
+	font-size:0.8em;
+	padding-bottom:3px;
+	margin: 3px 0px;
+}
+
+.barra{
+	padding:5px 3px;
+	background-color: #600;
+	text-align:left;
+	color:white;
+	border-radius:0px 3px 3px 0px;
+	width:0px;
+	transition: width 0.5s;
+}
